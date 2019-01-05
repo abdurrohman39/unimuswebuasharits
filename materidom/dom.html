@@ -1,0 +1,53 @@
+<html>
+    <head>  
+        <script type="text/javascript" src="select.js"></script>
+		<script type="text/javascript" src="eventjob.js"></script> 
+    </head>
+
+    <body>
+	<div id="pesan"><h1>Selamat Datang</h1></div>
+       <button id="buttonwarna" onclick="gantiwarna()">Hijau</button>
+
+       <script type="text/javascript">
+           function gantiwarna(){
+               var pesan = document.getElementById('pesan');
+               var button = document.getElementById('buttonwarna');
+               if(button.innerHTML=="Hijau")
+               {
+                   pesan.style.cssText="background-color: green;";
+                   button.innerHTML="Merah";
+               }
+               else if(button.innerHTML=="Merah")
+               {
+                   pesan.style.cssText="background-color: red;";
+                   button.innerHTML="Hijau";
+               }
+           }
+       </script>
+
+       <form>
+           <select name="provinsi" onchange="tampilkota(this.value);">
+               <option value=""></option>
+               <option value="Jabar">Jawa Barat</option>
+               <option value="Jateng">Jawa Tengah</option>
+           </select>
+       </form>
+       <div id='kota'></div>
+	   
+        <div style="float: left">
+            <p>Pilih</p>
+            <select id="buah" size="5" onchange="pilih()">
+                <option value="A">Apel</option>
+                <option value="M">Mangga</option>
+                <option value="N">Nanas</option>
+                <option value="S">Semangka</option>
+            </select>
+        </div>
+
+        <div style="float: left; margin-left: 20px">
+            <p>Pilihan Anda</p>
+            <select id="pilihan" size="5">
+            </select>
+        </div>
+    </body>
+</html>
